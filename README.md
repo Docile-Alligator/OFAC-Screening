@@ -1,4 +1,6 @@
-# Description
+# OFAC Screening
+
+### Description
 This web app shows a form that receives the following input: name, birth year and country. Upon submission, it will query the [OFAC API](https://docs.ofac-api.com/screening-api)'s Sanctions Screening endpoint to check if therer is a match report in the OFAC data source.
 
 If a person has any of the three fields match against the SDN list, a dialog will be shown with "Hit" as its title and the exact input that is matched.
@@ -11,7 +13,7 @@ Country should be selected from a list of available countries when the country i
 
 Due to limitations in the [OFAC API](https://docs.ofac-api.com/screening-api), the birth year must be converted to date of birth so this web app just appends Jan 01 to the birth year.
 
-# Deployment
+### Deployment
 Make sure the Node.js version is >= 14.
 
 Create `.env` at the project root folder and add the following environment variable for the API key:
@@ -27,7 +29,7 @@ serve -s build
 
 It will then show you the URL to access the web page.
 
-# Improvements
+### Improvements
 The layout is not thoroughly tested on different screen sizes due to time constraints. Further improvements can be made so that people using different devices can access the web page without issues.
 
 This web app used `create-react-app` and not `next.js` due to the [material-web](https://github.com/material-components/material-web/tree/main) library does not work on the latter framework. It may be better to use `next.js` or `Vite` + `React`.
