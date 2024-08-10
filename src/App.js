@@ -167,15 +167,18 @@ function CountryMenuEntry(props) {
 };
 
 const ResultDialog = forwardRef(function ResultDialog(props, forwardedRef) {
-    const title = props.screeningResult == null ? "" : props.screeningResult.passed ? "Clear" : "Hit";
+    let title = "";
     let message;
     if (props.screeningResult == null) {
         message = "";
     } else if (props.screeningResult.passed) {
+        title = "Clear";
         message = "You passed the OFAC screening."
     } else if (typeof props.screeningResult.error === 'string') {
+        title = "Error";
         message = props.screeningResult.error;
     } else if (typeof props.screeningResult.error === 'object') {
+        title = "Hit";
         message = "Name: " + (props.screeningResult.error.name ? '❌ ' : '✅ ')
         + "DoB: " + (props.screeningResult.error.birthYear ? '❌ ' : '✅ ')
         + "Country: " + (props.screeningResult.error.country ? '❌ ' : '✅ ');
