@@ -67,7 +67,7 @@ body {
     margin: 48px;
 }
 
-img {
+.description_background_image {
     max-width: 100%;
     height: 100%;
     object-fit: cover;

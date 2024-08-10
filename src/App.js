@@ -40,7 +40,7 @@ function WebFormExplanation() {
             <div className={'screening_info'}>
                 <p style={{ fontSize: '3rem', color: 'white' }}>OFAC Screening</p>
             </div>
-            <img alt="web form explanation background" src={require('./form_explanation_background.jpg')} />
+            <img alt="web form explanation background" src={require('./form_explanation_background.jpg')} className={"description_background_image"} />
         </div>
     )
 }
