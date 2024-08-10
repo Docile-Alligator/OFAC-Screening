@@ -179,9 +179,9 @@ const ResultDialog = forwardRef(function ResultDialog(props, forwardedRef) {
         message = props.screeningResult.error;
     } else if (typeof props.screeningResult.error === 'object') {
         title = "Hit";
-        message = "Name: " + (props.screeningResult.error.name ? '❌ ' : '✅ ')
-        + "DoB: " + (props.screeningResult.error.birthYear ? '❌ ' : '✅ ')
-        + "Country: " + (props.screeningResult.error.country ? '❌ ' : '✅ ');
+        message = "Name: " + (props.screeningResult.error.name === true ? '❌ ' : '✅ ')
+        + "DoB: " + (props.screeningResult.error.birthYear === true ? '❌ ' : '✅ ')
+        + "Country: " + (props.screeningResult.error.country === true ? '❌ ' : '✅ ');
     } else {
         message = "";
     }

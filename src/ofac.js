@@ -67,7 +67,7 @@ async function screenCandidate(name, birthYear, country) {
         )
     });
     if (!response.ok) {
-        throw new Error("Error contacting the server");
+        return Promise.reject("Error contacting the server");
     }
 
     const content = await response.json();
